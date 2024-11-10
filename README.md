@@ -26,25 +26,26 @@ Recursos-chave incluem:
 ### Dockerfile-nginx
 
 Este Dockerfile constrói uma imagem de Nginx:
-
-dockerfile FROM nginx:latest COPY index.html /usr/share/nginx/html/index.html
-
+```dockerfile
+dockerfile FROM nginx:latest
+COPY index.html /usr/share/nginx/html/index.html
+```
 
 Ele copia um arquivo `index.html` para o contêiner Nginx, que servirá como nossa página web.
 
 ### Dockerfile-proxy
 
 Este Dockerfile constrói uma imagem de proxy reverso:
-
+```
 dockerfile FROM nginx:latest COPY default.conf /etc/nginx/conf.d/default.conf
-
+```
 
 Ele copia um arquivo de configuração `default.conf` para o contêiner Nginx, configurando a funcionalidade do proxy reverso.
 
 ### default.conf
 
 Este arquivo de configuração define o comportamento do proxy reverso:
-
+```
 nginx server { listen 80;
 
 location / {
@@ -54,7 +55,7 @@ location / {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
 }
-
+```
 
 Ele configura o proxy reverso para encaminhar requisições para o contêiner de aplicação Nginx.
 
