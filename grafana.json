@@ -1,0 +1,21 @@
+{
+    "dashboard": {
+      "id": null,
+      "title": "Nginx Metrics",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "Nginx CPU Usage",
+          "targets": [
+            {
+              "expr": "avg(rate(process_cpu_seconds_total{job='docker'}[1m])) by (container)",
+              "format": "time_series"
+            }
+          ]
+        }
+      ],
+      "timezone": "browser"
+    },
+    "overwrite": true
+  }
+  

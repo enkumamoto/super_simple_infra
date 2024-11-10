@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['nginx-container:80', 'proxy-container:80']  # Substitua com os nomes dos containers ou IPs
+    metrics_path: '/metrics'  # Caminho para métricas expostas pelos containers
