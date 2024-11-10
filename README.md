@@ -26,7 +26,7 @@ Recursos-chave incluem:
 ### Dockerfile-nginx
 
 Este Dockerfile constrói uma imagem de Nginx:
-```dockerfile
+```
 dockerfile FROM nginx:latest
 COPY index.html /usr/share/nginx/html/index.html
 ```
