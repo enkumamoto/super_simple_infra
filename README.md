@@ -37,10 +37,13 @@ Ele copia um arquivo `index.html` para o contêiner Nginx, que servirá como nos
 
 Este Dockerfile constrói uma imagem de proxy reverso:
 ```
-dockerfile FROM nginx:latest COPY default.conf /etc/nginx/conf.d/default.conf
+dockerfile FROM nginx:latest
+COPY default.conf /etc/nginx/conf.d/default.conf
 ```
 
 Ele copia um arquivo de configuração `default.conf` para o contêiner Nginx, configurando a funcionalidade do proxy reverso.
+
+Os outros Dockerfiles seguem o mesmo padrão.
 
 ### default.conf
 
